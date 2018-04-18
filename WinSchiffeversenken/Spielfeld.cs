@@ -38,6 +38,7 @@ namespace WinSchiffeversenken
                 frm.Controls.Add(item);
                 item.BringToFront();
                 item.MouseHover += Item_MouseHover;
+                item.MouseClick += Item_MouseClick;
             }
 
             int x = pb.Location.X + 1, y = pb.Location.Y + 1;
@@ -55,10 +56,42 @@ namespace WinSchiffeversenken
 
         }
 
+        private void Item_MouseClick(object sender, MouseEventArgs e)
+        {
+            Schiff schiff = new Schiff(0, 0, 0, true);
+            for (int x = 0; x < Felder.GetLength(0); x++)
+            {
+                for (int y = 0; y < Felder.GetLength(1); y++)
+                {
+                    if (Felder[x, y] == (PictureBox)sender) schiff = new Schiff(4, y, x, true);
+                }
+            }
+
+            Bootsetzen(schiff);
+        }
+
         private void Item_MouseHover(object sender, EventArgs e)
         {
             PictureBox PB = (PictureBox)sender;
-            PB.BackColor = Color.Red;
+            //PB.BackColor = Color.Red;
+        }
+
+        private void Bootsetzen(Schiff schiff)
+        {
+            if (schiff.Horizontal)
+            {
+                for (int i = schiff.XKoord; i < schiff.XKoord + schiff.Laenge; i++)
+                {
+                    Felder[schiff.YKoord, i].BackColor = Color.Green;
+                }
+            }
+            if (!schiff.Horizontal)
+            {
+                for (int i = schiff.YKoord; i < schiff.YKoord + schiff.Laenge; i++)
+                {
+                    Felder[i, schiff.XKoord].BackColor = Color.Green;
+                }
+            }
         }
 
         private void BoxEigenschaften()
