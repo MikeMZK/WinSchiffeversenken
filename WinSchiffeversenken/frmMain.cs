@@ -18,7 +18,7 @@ namespace WinSchiffeversenken
         {
             InitializeComponent();
 
-            S = new Spielfeld(pictureBox1);
+            S = new Spielfeld(pictureBox1, this, 40);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

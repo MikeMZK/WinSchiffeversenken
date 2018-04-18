@@ -15,26 +15,66 @@ namespace WinSchiffeversenken
         public PictureBox[,] Felder = new PictureBox[10, 10];
 
         private PictureBox pb;
+        private Form frm;
 
-        public Spielfeld(PictureBox pb)
+        public Spielfeld(PictureBox pb, Form frm, int boxsize)
         {
             this.pb = pb;
+            this.frm = frm;
+            this.boxsize = boxsize;
+
+            BoxEigenschaften();
         }
 
         public void Erstellen()
         {
             pb.BackColor = Color.Black;
-            pb.Height = boxsize * felderanzahl + boxsize + 1;
-            pb.Width = boxsize * felderanzahl + boxsize + 1;
+            pb.Height = boxsize * felderanzahl + felderanzahl + 1;
+            pb.Width = boxsize * felderanzahl + felderanzahl + 1;
 
-            Felder[0, 0] = new PictureBox();
-            Felder[0, 0].BackColor = Color.Gray;
-            Felder[0, 0].Width = boxsize;
-            Felder[0, 0].Height = boxsize;
+
+            foreach (var item in Felder)
+            {
+                frm.Controls.Add(item);
+                item.BringToFront();
+                item.MouseHover += Item_MouseHover;
+            }
+
+            int x = pb.Location.X + 1, y = pb.Location.Y + 1;
+
+            for (int i = 0; i < Felder.GetLength(0); i++)
+            {
+                for (int l = 0; l < Felder.GetLength(1); l++)
+                {
+                    Felder[i, l].Location = new Point(x, y);
+                    x += boxsize + 1;
+                }
+                x = pb.Location.X + 1;
+                y += boxsize + 1;
+            }
 
         }
 
+        private void Item_MouseHover(object sender, EventArgs e)
+        {
+            PictureBox PB = (PictureBox)sender;
+            PB.BackColor = Color.Red;
+        }
 
+        private void BoxEigenschaften()
+        {
+            for (int i = 0; i < Felder.GetLength(0); i++)
+            {
+                for (int x = 0; x < Felder.GetLength(1); x++)
+                {
+                    Felder[i, x] = new PictureBox();
+                    Felder[i, x].BackColor = Color.Orange;
+                    Felder[i, x].Width = boxsize;
+                    Felder[i, x].Height = boxsize;
+                }
+            }
+
+        }
 
 
 
