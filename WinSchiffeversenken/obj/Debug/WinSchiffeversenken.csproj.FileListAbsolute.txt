@@ -1,0 +1,10 @@
+D:\Users\mikem\Documents\GitHub\WinSchiffeversenken\WinSchiffeversenken\bin\Debug\WinSchiffeversenken.exe.config
+D:\Users\mikem\Documents\GitHub\WinSchiffeversenken\WinSchiffeversenken\bin\Debug\WinSchiffeversenken.exe
+D:\Users\mikem\Documents\GitHub\WinSchiffeversenken\WinSchiffeversenken\bin\Debug\WinSchiffeversenken.pdb
+D:\Users\mikem\Documents\GitHub\WinSchiffeversenken\WinSchiffeversenken\obj\Debug\WinSchiffeversenken.csprojResolveAssemblyReference.cache
+D:\Users\mikem\Documents\GitHub\WinSchiffeversenken\WinSchiffeversenken\obj\Debug\WinSchiffeversenken.frmMain.resources
+D:\Users\mikem\Documents\GitHub\WinSchiffeversenken\WinSchiffeversenken\obj\Debug\WinSchiffeversenken.Properties.Resources.resources
+D:\Users\mikem\Documents\GitHub\WinSchiffeversenken\WinSchiffeversenken\obj\Debug\WinSchiffeversenken.csproj.GenerateResource.cache
+D:\Users\mikem\Documents\GitHub\WinSchiffeversenken\WinSchiffeversenken\obj\Debug\WinSchiffeversenken.csproj.CoreCompileInputs.cache
+D:\Users\mikem\Documents\GitHub\WinSchiffeversenken\WinSchiffeversenken\obj\Debug\WinSchiffeversenken.exe
+D:\Users\mikem\Documents\GitHub\WinSchiffeversenken\WinSchiffeversenken\obj\Debug\WinSchiffeversenken.pdb

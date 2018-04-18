@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace WinSchiffeversenken
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
-        public Form1()
+        Spielfeld S;
+
+        public frmMain()
         {
             InitializeComponent();
+
+            S = new Spielfeld(pictureBox1);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            S.Erstellen();
         }
     }
 }
